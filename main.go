@@ -204,6 +204,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 	res.Status = "ok"
 	res.Data = responseUser
 	json.NewEncoder(w).Encode(res)
+	return
 
 }
 
@@ -250,4 +251,5 @@ func Auth(w http.ResponseWriter, r *http.Request) {
 	response.Status = "ok"
 	response.Data = responseUser
 	json.NewEncoder(w).Encode(response)
+	return
 }
