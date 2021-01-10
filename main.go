@@ -19,7 +19,7 @@ import (
 )
 
 var (
-	MongoURI   = flag.String("mongouri", "mongodb+srv://sami_92:sami_92@cluster0.dovo5.mongodb.net/?retryWrites=true&w=majority", "test_database")
+	MongoURI   = flag.String("mongouri", "mongodb://localhost:27017", "test_database")
 	collection = flag.String("CRUD Database", "maxcrm", " for example")
 	DBClient   *mongo.Client
 	AppDB      *mongo.Database
@@ -297,4 +297,10 @@ func DeleteSession(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(response)
 	return
 
+}
+
+func ChangePassword(w http.ResponseWriter, r *http.Request) {
+	CORSHeaders(w, r)
+	//oldPass := mux.Vars(r)["oldpass"]
+	//collection := AppDB.Collection("usercrm")
 }
